@@ -1,0 +1,74 @@
+# switch plugins
+switch.plug_158d00010ad5d4:
+  friendly_name: 卫生间插座
+# switch keys
+switch.switch_double_click_158d000104fad4:
+  friendly_name: 门铃双击
+switch.switch_double_click_158d0001137e6c:
+  friendly_name: 主卧双击
+switch.switch_long_press_158d000104fad4:
+  friendly_name: 门铃长按
+switch.switch_long_press_158d0001137e6c:
+  friendly_name: 主卧长按
+switch.switch_one_click_158d000104fad4:
+  friendly_name: 门铃单击
+switch.switch_one_click_158d0001137e6c:
+  friendly_name: 主卧单击
+# switch wall-switch
+switch.ctrl_neutral1_channel_0_158d00010b6cc9:
+  friendly_name: 次卧吸顶灯
+switch.ctrl_neutral1_channel_0_158d000127a49d:
+  friendly_name: 主卧吸顶灯
+switch.ctrl_neutral2_channel_0_158d00010e3235:
+  friendly_name: 客厅射灯
+switch.ctrl_neutral2_channel_1_158d00010e3235:
+  friendly_name: 客厅吸顶灯
+switch.ctrl_neutral2_channel_0_158d00010ee3fb:
+  friendly_name: 洗手间吸顶灯
+switch.ctrl_neutral2_channel_1_158d00010ee3fb:
+  friendly_name: 洗手间浴霸
+# humidity
+sensor.yr_humidity:
+  friendly_name: 户外湿度
+sensor.humidity_158d0001069997:
+  friendly_name: 客厅湿度
+sensor.humidity_158d00010699fe:
+  friendly_name: 次卧湿度
+# temperature
+sensor.yr_temperature:
+  friendly_name: 户外气温
+sensor.temperature_158d0001069997:
+  friendly_name: 客厅温度
+sensor.temperature_158d00010699fe:
+  friendly_name: 次卧温度
+# magnet sensor
+binary_sensor.magnet_158d0001025565:
+  friendly_name: 客厅门
+# motion sensor
+binary_sensor.motion_158d0000f4164c:
+  hidden: true
+  friendly_name: 次卧人体传感器
+binary_sensor.motion_158d0000f418cf:
+  hidden: true
+  friendly_name: 主卧东人体传感器
+binary_sensor.motion_158d0000f41b09:
+  hidden: true
+  friendly_name: 主卧西人体传感器
+binary_sensor.motion_158d0000f431dd:
+  hidden: true
+  friendly_name: 厨房人体传感器
+binary_sensor.motion_158d0000f44617:
+  hidden: true
+  friendly_name: 卫生间人体传感器
+binary_sensor.motion_158d0001188401:
+  hidden: true
+  friendly_name: 客厅人体传感器
+# weather
+sensor.yr_symbol:
+  friendly_name: 天气
+sensor.yr_wind_direction:
+  friendly_name: 风向
+sensor.yr_wind_speed:
+  friendly_name: 风速
+sun.sun:
+  friendly_name: 昼夜

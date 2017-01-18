@@ -2,110 +2,53 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: HaoJia
   # Location required to calculate the time the sun rises and sets
-  latitude: 34.7725
-  longitude: 113.7266
+  latitude: !secret home_location_latitude
+  longitude: !secret home_location_longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 44
+  elevation: !secret home_location_elevation
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: UTC
+  time_zone: Asia/Shanghai
   # overide device name and icon
-  customize:
-    switch.plug_158d00010ad5d4:
-      friendly_name: 卫生间插座
-    switch.switch_double_click_158d000104fad4:
-      friendly_name: 门铃双击
-    switch.switch_double_click_158d0001137e6c:
-      friendly_name: 主卧双击
-    switch.switch_long_press_158d000104fad4:
-      friendly_name: 门铃长按
-    switch.switch_long_press_158d0001137e6c:
-      friendly_name: 主卧长按
-    switch.switch_one_click_158d000104fad4:
-      friendly_name: 门铃单击
-    switch.switch_one_click_158d0001137e6c:
-      friendly_name: 主卧单击
-    switch.ctrl_neutral1_channel_0_158d00010b6cc9:
-      friendly_name: 次卧吸顶灯
-    switch.ctrl_neutral1_channel_0_158d000127a49d:
-      friendly_name: 主卧吸顶灯
-    switch.ctrl_neutral2_channel_0_158d00010e3235:
-      friendly_name: 客厅射灯
-    switch.ctrl_neutral2_channel_0_158d00010ee3fb:
-      friendly_name: 洗手间吸顶灯
-    switch.ctrl_neutral2_channel_1_158d00010e3235:
-      friendly_name: 客厅吸顶灯
-    switch.ctrl_neutral2_channel_1_158d00010ee3fb:
-      friendly_name: 洗手间浴霸
-    sensor.humidity_158d0001069997:
-      friendly_name: 客厅湿度
-    sensor.humidity_158d00010699fe:
-      friendly_name: 次卧湿度
-    sensor.temperature_158d0001069997:
-      friendly_name: 客厅温度
-    sensor.temperature_158d00010699fe:
-      friendly_name: 次卧温度
-    binary_sensor.magnet_158d0001025565:
-      friendly_name: 客厅门
-    binary_sensor.motion_158d0000f4164c:
-      friendly_name: 次卧人体传感器
-    binary_sensor.motion_158d0000f418cf:
-      friendly_name: 主卧东人体传感器
-    binary_sensor.motion_158d0000f41b09:
-      friendly_name: 主卧西人体传感器
-    binary_sensor.motion_158d0000f431dd:
-      friendly_name: 厨房人体传感器
-    binary_sensor.motion_158d0000f44617:
-      friendly_name: 卫生间人体传感器
-    binary_sensor.motion_158d0001188401:
-      friendly_name: 客厅人体传感器
-    sensor.yr_humidity:
-      friendly_name: 户外湿度
-    sensor.yr_symbol:
-      friendly_name: 天气
-    sensor.yr_temperature:
-      friendly_name: 户外气温
-    sensor.yr_wind_direction:
-      friendly_name: 风向
-    sensor.yr_wind_speed:
-      friendly_name: 风速
-    sun.sun:
-      friendly_name: 昼夜
+  customize: !include customize.yaml
 
-
-# Show links to resources in log and frontend
-#introduction:
-
-# Enables the frontend
-frontend:
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  client_id: home-assistant-1
+  username: !secret mqtt_user
+  password: !secret mqtt_passwd
 
 http:
   # Uncomment this to add a password (recommended!)
-  api_password: 3332408hjl
+  api_password: !secret http_passwd
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
 
+group: !include groups.yaml
+
+# Enable Functions
+# Show links to resources in log and frontend
+#introduction:
+# Enables the frontend
+frontend:
 # Checks for available updates
 updater:
-
 # Discover some devices automatically
 discovery:
-
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
-
 # Enables support for tracking state changes over time.
 history:
-
 # View all events in a logbook
 logbook:
-
 # Track the sun
 sun:
 
+# Devices
 # Weather Prediction
-sensor:
+sensor: !include sensors.yaml
   platform: yr
   monitored_conditions:
     - symbol
@@ -115,30 +58,29 @@ sensor:
     - windDirection
 
 # Text to speech
-tts:
-  platform: google
 
 # aqara gateway
 aqara:
   gateway_password: o0l5aa748n6t9pxl
 
-media_player:
+media_player: !include media_players.yaml
 # Sony TV
   - platform: braviatv
     host: 192.168.1.114
     name: 客厅电视
 
-light:
+light: !include lights.yaml
 # yeelight
   - platform: yeelight
     devices:
       192.168.1.176:
         name: 厕所灯
 
-mqtt:
-  broker: 127.0.0.1
-  port: 1883
-  client_id: home-assistant-1
-  username: pi
-  password: raspberry
+tts:
+  - platform: google
+    api_key: !secret voicerss_key
+    language: 'zh-cn'
+    codec: mp3
+    format: 8khz_8bit_mono
+
 
