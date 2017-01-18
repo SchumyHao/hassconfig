@@ -15,6 +15,7 @@ default_view:
     - sun.sun
 livingroom:
   name: 客厅
+  view: yes
   entities:
     - switch.ctrl_neutral2_channel_0_158d00010e3235
     - switch.ctrl_neutral2_channel_1_158d00010e3235
@@ -24,12 +25,14 @@ livingroom:
     - sensor.temperature_158d0001069997
 bedroom:
   name: 主卧
+  view: yes
   entities:
     - switch.ctrl_neutral1_channel_0_158d000127a49d
     - binary_sensor.motion_158d0000f418cf
     - binary_sensor.motion_158d0000f41b09
 bedroom2:
   name: 次卧
+  view: yes
   entities:
     - switch.ctrl_neutral1_channel_0_158d00010b6cc9
     - binary_sensor.motion_158d0000f4164c
@@ -37,9 +40,11 @@ bedroom2:
     - sensor.temperature_158d00010699fe
 balcony:
   name: 阳台
+  view: yes
   entities:
 wc:
   name: 厕所
+  view: yes
   entities:
     - switch.plug_158d00010ad5d4
     - switch.ctrl_neutral2_channel_0_158d00010ee3fb
@@ -47,6 +52,7 @@ wc:
     - binary_sensor.motion_158d0000f44617
 kitchen:
   name: 厨房
+  view: yes
   entities:
     - switch.kitchen_pin_3
     - binary_sensor.motion_158d0000f431dd
