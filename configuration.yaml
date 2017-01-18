@@ -47,34 +47,13 @@ logbook:
 sun:
 
 # Devices
-# Weather Prediction
 sensor: !include sensors.yaml
-  platform: yr
-  monitored_conditions:
-    - symbol
-    - temperature
-    - humidity
-    - windSpeed
-    - windDirection
-
-# Text to speech
+media_player: !include media_players.yaml
+light: !include lights.yaml
 
 # aqara gateway
 aqara:
   gateway_password: o0l5aa748n6t9pxl
-
-media_player: !include media_players.yaml
-# Sony TV
-  - platform: braviatv
-    host: 192.168.1.114
-    name: 客厅电视
-
-light: !include lights.yaml
-# yeelight
-  - platform: yeelight
-    devices:
-      192.168.1.176:
-        name: 厕所灯
 
 tts:
   - platform: google
