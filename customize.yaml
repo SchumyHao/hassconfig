@@ -1,6 +1,8 @@
 # switch plugins
 switch.plug_158d00010ad5d4:
   friendly_name: 卫生间插座
+switch.plug_158d00011049fc:
+  friendly_name: NAS插座
 # switch keys
 switch.switch_double_click_158d000104fad4:
   friendly_name: 门铃双击
@@ -72,3 +74,9 @@ sensor.yr_wind_speed:
   friendly_name: 风速
 sun.sun:
   friendly_name: 昼夜
+# lights
+light.wc:
+  friendly_name: 洗手间灯
+# TVs
+media_player.livingroomtv:
+  friendly_name: 客厅电视
