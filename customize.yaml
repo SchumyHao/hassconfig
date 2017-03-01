@@ -17,17 +17,17 @@ switch.switch_one_click_158d000104fad4:
 switch.switch_one_click_158d0001137e6c:
   friendly_name: 主卧单击
 # switch wall-switch
-switch.ctrl_neutral1_channel_0_158d00010b6cc9:
+switch.wall_switch_158d00010b6cc9:
   friendly_name: 次卧吸顶灯
-switch.ctrl_neutral1_channel_0_158d000127a49d:
+switch.wall_switch_158d000127a49d:
   friendly_name: 主卧吸顶灯
-switch.ctrl_neutral2_channel_0_158d00010e3235:
+switch.wall_switch_left_158d00010e3235:
   friendly_name: 客厅射灯
-switch.ctrl_neutral2_channel_1_158d00010e3235:
+switch.wall_switch_right_158d00010e3235:
   friendly_name: 客厅吸顶灯
-switch.ctrl_neutral2_channel_0_158d00010ee3fb:
+switch.wall_switch_left_158d00010ee3fb:
   friendly_name: 洗手间吸顶灯
-switch.ctrl_neutral2_channel_1_158d00010ee3fb:
+switch.wall_switch_right_158d00010ee3fb:
   friendly_name: 洗手间浴霸
 # humidity
 sensor.yr_humidity:
@@ -44,26 +44,20 @@ sensor.temperature_158d0001069997:
 sensor.temperature_158d00010699fe:
   friendly_name: 次卧温度
 # magnet sensor
-binary_sensor.magnet_158d0001025565:
+binary_sensor.door_window_sensor_158d0001025565:
   friendly_name: 客厅门
 # motion sensor
-binary_sensor.motion_158d0000f4164c:
-  hidden: true
+binary_sensor.motion_sensor_158d0000f4164c:
   friendly_name: 次卧人体传感器
-binary_sensor.motion_158d0000f418cf:
-  hidden: true
+binary_sensor.motion_sensor_158d0000f418cf:
   friendly_name: 主卧东人体传感器
-binary_sensor.motion_158d0000f41b09:
-  hidden: true
+binary_sensor.motion_sensor_158d0000f41b09:
   friendly_name: 主卧西人体传感器
-binary_sensor.motion_158d0000f431dd:
-  hidden: true
+binary_sensor.motion_sensor_158d0000f431dd:
   friendly_name: 厨房人体传感器
-binary_sensor.motion_158d0000f44617:
-  hidden: true
+binary_sensor.motion_sensor_158d0000f44617:
   friendly_name: 卫生间人体传感器
-binary_sensor.motion_158d0001188401:
-  hidden: true
+binary_sensor.motion_sensor_158d0001188401:
   friendly_name: 客厅人体传感器
 # weather
 sensor.yr_symbol:
@@ -77,6 +71,11 @@ sun.sun:
 # lights
 light.wc:
   friendly_name: 洗手间灯
+light.gateway_light_f0b429aa0966:
+  friendly_name: 网关灯
 # TVs
 media_player.livingroomtv:
   friendly_name: 客厅电视
+# Template
+binary_sensor.somebodymoving:
+  friendly_name: 有人移动

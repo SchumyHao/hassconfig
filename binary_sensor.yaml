@@ -1,0 +1,16 @@
+# Somebody is moving at home
+- platform: template
+  sensors:
+    somebodymoving:
+      sensor_class: 'moving'
+      value_template: >
+        {% if is_state("binary_sensor.motion_sensor_158d0000f4164c", "off") 
+            and is_state("binary_sensor.motion_sensor_158d0000f418cf", "off") 
+            and is_state("binary_sensor.motion_sensor_158d0000f41b09", "off") 
+            and is_state("binary_sensor.motion_sensor_158d0000f431dd", "off") 
+            and is_state("binary_sensor.motion_sensor_158d0000f44617", "off") 
+            and is_state("binary_sensor.motion_sensor_158d0001188401", "off") %}
+        off
+        {% else %}
+        on
+        {% endif %}

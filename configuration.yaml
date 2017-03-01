@@ -55,13 +55,20 @@ sun:
 sensor: !include sensors.yaml
 media_player: !include media_players.yaml
 light: !include lights.yaml
+binary_sensor: !include binary_sensor.yaml
 
 # aqara gateway
-aqara:
-  gateway_password: o0l5aa748n6t9pxl
+#aqara:
+#  gateway_password:
+
+# xiaomi gateway
+xiaomi:
+  gateways:
+    - sid:
+      key: !secret xiaomi_key
 
 tts:
-  - platform: google
+  - platform: voicerss
     api_key: !secret voicerss_key
     language: 'zh-cn'
     codec: mp3
