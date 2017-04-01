@@ -244,7 +244,7 @@ class XiaomiGateway:
 
         sensors = ['sensor_ht']
         binary_sensors = ['magnet', 'motion', 'switch', '86sw1', '86sw2', 'cube']
-        switches = ['plug', 'ctrl_neutral1', 'ctrl_neutral2']
+        switches = ['plug', 'ctrl_neutral1', 'ctrl_neutral2', '86plug']
         lights = ['gateway']
 
         for sid in sids:
