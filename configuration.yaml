@@ -11,19 +11,14 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Asia/Shanghai
   # overide device name and icon
-  customize: !include customize.yaml
+  customize: !include_dir_merge_named customize
 
-panel_iframe:
-  configurator:
-    title: Configurator
-    url: http://192.168.1.236:3218
-
-mqtt:
-  broker: 127.0.0.1
-  port: 1883
-  client_id: home-assistant-1
-  username: !secret mqtt_user
-  password: !secret mqtt_passwd
+#mqtt:
+#  broker: 127.0.0.1
+#  port: 1883
+#  client_id: home-assistant-1
+#  username: !secret mqtt_user
+#  password: !secret mqtt_passwd
 
 http:
   # Uncomment this to add a password (recommended!)
@@ -31,7 +26,7 @@ http:
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
 
-group: !include groups.yaml
+group: !include_dir_merge_named group
 
 # Enable Functions
 # Show links to resources in log and frontend
@@ -41,7 +36,7 @@ frontend:
 # Checks for available updates
 updater:
 # Discover some devices automatically
-discovery:
+# discovery:
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 # Enables support for tracking state changes over time.
@@ -50,16 +45,14 @@ history:
 logbook:
 # Track the sun
 sun:
+# enable visiable configurator
+config:
 
 # Devices
 sensor: !include sensors.yaml
 media_player: !include media_players.yaml
 light: !include lights.yaml
 binary_sensor: !include binary_sensor.yaml
-
-# aqara gateway
-#aqara:
-#  gateway_password:
 
 # xiaomi gateway
 xiaomi:
@@ -68,10 +61,23 @@ xiaomi:
       key: !secret xiaomi_key
 
 tts:
-  - platform: voicerss
-    api_key: !secret voicerss_key
-    language: 'zh-cn'
-    codec: mp3
-    format: 8khz_8bit_mono
+  - platform: baidu
+    language: zh
+    speed: 5
+    pitch: 5
+    volume: 5
+    person: 1
+    api_key: !secret baiduttsapikey
+    secret_key: !secret baiduttssecretkey
 
+# Camera
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
+camera:
+  - platform: ffmpeg
+    name: xiaofang
+    input: -rtsp_transport tcp -i rtsp://192.168.1.105/unicast
 
+# Database
+recorder:
+  db_url: !secret db_url_path

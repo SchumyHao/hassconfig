@@ -1,0 +1,76 @@
+default_view:
+  name: 郝家
+  view: yes
+  entities:
+    - sun.sun
+    - binary_sensor.somebodymoving
+    - group.alllights
+    - group.allplugins
+    - group.gassensors
+    - group.humiditysensors
+    - group.temperaturesensors
+    - group.airquality
+    - group.weatherforecast
+livingroom:
+  name: 客厅
+  view: yes
+  entities:
+    - binary_sensor.door_window_sensor_158d0001025565
+    - binary_sensor.motion_sensor_158d0001188401
+    - sensor.humidity_158d0001069997
+    - sensor.temperature_158d0001069997
+    - group.livingroomlights
+    - group.livingroomplugins
+    - group.livingroomswitches
+    - media_player.livingroomtv
+bedroom:
+  name: 主卧
+  view: yes
+  entities:
+    - binary_sensor.motion_sensor_158d0000f418cf
+    - sensor.humidity_158d00010698f6
+    - sensor.temperature_158d00010698f6
+    - group.bedroomlights
+    - group.bedroomplugins
+    - group.bedroomswitches
+bedroom2:
+  name: 次卧
+  view: yes
+  entities:
+    - binary_sensor.motion_sensor_158d0000f4164c
+    - sensor.humidity_158d00010699fe
+    - sensor.temperature_158d00010699fe
+    - group.bedroom2lights
+    - group.bedroom2plugins
+    - group.bedroom2switches
+wc:
+  name: 洗手间
+  view: yes
+  entities:
+    - binary_sensor.door_window_sensor_158d0001549234
+    - binary_sensor.motion_sensor_158d0000f44617
+    - group.wclights
+    - group.wcplugins
+kitchen:
+  name: 厨房
+  view: yes
+  entities:
+    - binary_sensor.motion_sensor_158d0000f431dd
+    - group.gassensors
+    - group.kitchenplugins
+balcony:
+  name: 阳台
+  view: yes
+  entities:
+    - group.balconyplugins
+    - camera.xiaofang
+weather:
+  name: 天气预报
+  view: yes
+  entities:
+    - group.airquality
+    - group.todayforecast
+    - group.weatherforecast
+    - group.weathernow
+    - group.weathersuggestion
+    - group.onehourforecast

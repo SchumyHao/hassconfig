@@ -1,0 +1,12 @@
+LivingroomSwitches:
+  entities:
+    - binary_sensor.cube_158d0001147279
+    - binary_sensor.switch_158d000104fad4
+
+BedroomSwitches:
+  entities:
+    - binary_sensor.switch_158d0001137e6c
+
+Bedroom2Switches:
+  entities:
+    - binary_sensor.switch_158d00013ecf71

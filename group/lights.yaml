@@ -1,0 +1,30 @@
+LivingroomLights:
+  entities:
+    - light.gateway_light_f0b429aa0966
+    - switch.wall_switch_left_158d00010e3235
+    - switch.wall_switch_right_158d00010e3235
+
+BedroomLights:
+  entities:
+    - switch.wall_switch_158d000127a49d
+
+Bedroom2Lights:
+  entities:
+    - light.wc
+    - switch.wall_switch_158d00010b6cc9
+
+WCLights:
+  entities:
+    - switch.wall_switch_left_158d00010ee3fb
+    - switch.wall_switch_right_158d00010ee3fb
+
+AllLights:
+  entities:
+    - light.gateway_light_f0b429aa0966
+    - switch.wall_switch_left_158d00010e3235
+    - switch.wall_switch_right_158d00010e3235
+    - switch.wall_switch_158d000127a49d
+    - light.wc
+    - switch.wall_switch_158d00010b6cc9
+    - switch.wall_switch_left_158d00010ee3fb
+    - switch.wall_switch_right_158d00010ee3fb

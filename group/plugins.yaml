@@ -1,0 +1,31 @@
+LivingroomPlugins:
+  entities:
+    - switch.plug_158d00010ad5d4
+    - switch.wall_plug_158d00015751d5
+BedroomPlugins:
+  entities:
+    - switch.wall_plug_158d0001592777
+Bedroom2Plugins:
+  entities:
+    - switch.plug_158d00011049fc
+    - switch.wall_plug_158d0001574ff4
+BalconyPlugins:
+  entities:
+    - switch.wall_plug_158d000159c2e3
+WCPlugins:
+  entities:
+    - switch.wall_plug_158d000159e6b9
+KitchenPlugins:
+  entities:
+    - switch.wall_plug_158d0001574f48
+
+AllPlugins:
+  entities:
+    - switch.plug_158d00010ad5d4
+    - switch.wall_plug_158d00015751d5
+    - switch.wall_plug_158d0001592777
+    - switch.plug_158d00011049fc
+    - switch.wall_plug_158d0001574ff4
+    - switch.wall_plug_158d000159c2e3
+    - switch.wall_plug_158d000159e6b9
+    - switch.wall_plug_158d0001574f48

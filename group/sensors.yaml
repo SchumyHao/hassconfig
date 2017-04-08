@@ -1,0 +1,28 @@
+DoorWindowSensors:
+  entities:
+    - binary_sensor.door_window_sensor_158d0001025565
+    - binary_sensor.door_window_sensor_158d0001549234
+
+TemperatureSensors:
+  entities:
+    - sensor.temperature_158d0001069997
+    - sensor.temperature_158d00010698f6
+    - sensor.temperature_158d00010699fe
+
+HumiditySensors:
+  entities:
+    - sensor.humidity_158d0001069997
+    - sensor.humidity_158d00010698f6
+    - sensor.humidity_158d00010699fe
+
+MotionSensors:
+  entities:
+    - binary_sensor.motion_sensor_158d0001188401
+    - binary_sensor.motion_sensor_158d0000f418cf
+    - binary_sensor.motion_sensor_158d0000f4164c
+    - binary_sensor.motion_sensor_158d0000f44617
+    - binary_sensor.motion_sensor_158d0000f431dd
+
+GasSensors:
+  entities:
+    - sensor.gas_158d00012da2e0

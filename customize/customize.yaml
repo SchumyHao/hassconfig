@@ -1,0 +1,8 @@
+# TVs
+media_player.livingroomtv:
+  friendly_name: 客厅电视
+
+# Template
+binary_sensor.somebodymoving:
+  friendly_name: 有人移动
+  device_class: motion

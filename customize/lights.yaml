@@ -1,0 +1,24 @@
+light.wc:
+  friendly_name: 次卧床头灯
+  icon: mdi:lightbulb
+light.gateway_light_f0b429aa0966:
+  friendly_name: 网关灯
+  icon: mdi:lightbulb
+switch.wall_switch_left_158d00010e3235:
+  friendly_name: 客厅射灯
+  icon: mdi:flash
+switch.wall_switch_right_158d00010e3235:
+  friendly_name: 客厅吸顶灯
+  icon: mdi:ceiling-light
+switch.wall_switch_158d00010b6cc9:
+  friendly_name: 次卧吸顶灯
+  icon: mdi:ceiling-light
+switch.wall_switch_158d000127a49d:
+  friendly_name: 主卧吸顶灯
+  icon: mdi:ceiling-light
+switch.wall_switch_left_158d00010ee3fb:
+  friendly_name: 洗手间吸顶灯
+  icon: mdi:ceiling-light
+switch.wall_switch_right_158d00010ee3fb:
+  friendly_name: 洗手间浴霸
+  icon: mdi:white-balance-sunny

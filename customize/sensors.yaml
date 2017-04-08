@@ -1,0 +1,37 @@
+sensor.humidity_158d0001069997:
+  friendly_name: 客厅湿度
+  icon: mdi:water-percent
+sensor.humidity_158d00010699fe:
+  friendly_name: 次卧湿度
+  icon: mdi:water-percent
+sensor.humidity_158d00010698f6:
+  friendly_name: 主卧湿度
+  icon: mdi:water-percent
+
+sensor.temperature_158d0001069997:
+  friendly_name: 客厅温度
+sensor.temperature_158d00010699fe:
+  friendly_name: 次卧温度
+sensor.temperature_158d00010698f6:
+  friendly_name: 主卧温度
+
+sensor.gas_158d00012da2e0:
+  friendly_name: 天然气密度
+  icon: mdi:gas-cylinder
+
+binary_sensor.motion_sensor_158d0000f4164c:
+  friendly_name: 次卧人体传感器
+binary_sensor.motion_sensor_158d0000f418cf:
+  friendly_name: 主卧东人体传感器
+binary_sensor.motion_sensor_158d0000f431dd:
+  friendly_name: 厨房人体传感器
+binary_sensor.motion_sensor_158d0000f44617:
+  friendly_name: 洗手间人体传感器
+binary_sensor.motion_sensor_158d0001188401:
+  friendly_name: 客厅人体传感器
+
+binary_sensor.door_window_sensor_158d0001025565:
+  friendly_name: 客厅门
+binary_sensor.door_window_sensor_158d0001549234:
+  friendly_name: 洗手间门
+
