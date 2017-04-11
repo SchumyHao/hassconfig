@@ -274,7 +274,7 @@ class XiaomiGateway:
 
         _LOGGER.info('Found %s devices', len(sids))
 
-        sensors = ['sensor_ht', 'natgas']
+        sensors = ['sensor_ht', 'natgas', 'gateway']
         binary_sensors = ['magnet', 'motion', 'switch', '86sw1', '86sw2', 'cube', 'smoke']
         switches = ['plug', 'ctrl_neutral1', 'ctrl_neutral2', '86plug']
         lights = ['gateway']
@@ -429,5 +429,9 @@ class XiaomiDevice(Entity):
             min_volt = 2800
 
             voltage = data['voltage']
+            if voltage > max_volt:
+                voltage = max_volt
+            elif voltage < min_volt:
+                voltage = min_volt
             percent = ((max_volt - voltage) / (max_volt - min_volt)) * 100
             self._device_state_attributes[ATTR_BATTERY_LEVEL] = round(percent)
