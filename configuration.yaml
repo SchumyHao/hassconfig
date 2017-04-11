@@ -1,6 +1,6 @@
 homeassistant:
   # Name of the location where Home Assistant is running
-  name: HaoJia
+  name: 郝家
   # Location required to calculate the time the sun rises and sets
   latitude: !secret home_location_latitude
   longitude: !secret home_location_longitude
@@ -78,6 +78,3 @@ camera:
     name: xiaofang
     input: -rtsp_transport tcp -i rtsp://192.168.1.105/unicast
 
-# Database
-recorder:
-  db_url: !secret db_url_path
