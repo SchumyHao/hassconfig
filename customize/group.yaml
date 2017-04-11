@@ -30,6 +30,8 @@ group.wcplugins:
   friendly_name: 洗手间插座
 group.gassensors:
   friendly_name: 天然气传感器
+group.illuminancesensoes:
+  friendly_name: 光强传感器
 group.kitchenplugins:
   friendly_name: 厨房插座
 group.balconyplugins:

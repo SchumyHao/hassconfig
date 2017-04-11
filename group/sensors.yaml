@@ -8,12 +8,14 @@ TemperatureSensors:
     - sensor.temperature_158d0001069997
     - sensor.temperature_158d00010698f6
     - sensor.temperature_158d00010699fe
+    - sensor.temperature_158d0001150fac
 
 HumiditySensors:
   entities:
     - sensor.humidity_158d0001069997
     - sensor.humidity_158d00010698f6
     - sensor.humidity_158d00010699fe
+    - sensor.humidity_158d0001150fac
 
 MotionSensors:
   entities:
@@ -26,3 +28,7 @@ MotionSensors:
 GasSensors:
   entities:
     - sensor.gas_158d00012da2e0
+
+IlluminanceSensoes:
+  entities:
+    - sensor.illuminance_f0b429aa0966

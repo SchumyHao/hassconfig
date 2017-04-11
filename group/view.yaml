@@ -6,6 +6,7 @@ default_view:
     - binary_sensor.somebodymoving
     - group.alllights
     - group.allplugins
+    - group.illuminancesensoes
     - group.gassensors
     - group.humiditysensors
     - group.temperaturesensors
@@ -19,6 +20,7 @@ livingroom:
     - binary_sensor.motion_sensor_158d0001188401
     - sensor.humidity_158d0001069997
     - sensor.temperature_158d0001069997
+    - sensor.illuminance_f0b429aa0966
     - group.livingroomlights
     - group.livingroomplugins
     - group.livingroomswitches
@@ -49,6 +51,8 @@ wc:
   entities:
     - binary_sensor.door_window_sensor_158d0001549234
     - binary_sensor.motion_sensor_158d0000f44617
+    - sensor.humidity_158d0001150fac
+    - sensor.temperature_158d0001150fac
     - group.wclights
     - group.wcplugins
 kitchen:
