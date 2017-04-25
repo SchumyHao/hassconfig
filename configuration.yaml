@@ -48,6 +48,13 @@ sun:
 # enable visiable configurator
 config:
 
+# panel
+panel_iframe:
+  node_red:
+    title: node_red
+    icon: mdi:vector-polyline
+    url: http://192.168.1.198:1880/
+
 # Devices
 sensor: !include sensors.yaml
 media_player: !include media_players.yaml

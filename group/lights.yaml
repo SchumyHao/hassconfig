@@ -6,11 +6,11 @@ LivingroomLights:
 
 BedroomLights:
   entities:
+    - light.wc
     - switch.wall_switch_158d000127a49d
 
 Bedroom2Lights:
   entities:
-    - light.wc
     - switch.wall_switch_158d00010b6cc9
 
 WCLights:
