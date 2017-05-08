@@ -28,6 +28,7 @@ MotionSensors:
 GasSensors:
   entities:
     - sensor.gas_158d00012da2e0
+    - binary_sensor.natgas_sensor_158d00012da2e0
 
 IlluminanceSensoes:
   entities:

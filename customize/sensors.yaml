@@ -23,6 +23,9 @@ sensor.temperature_158d0001150fac:
 sensor.gas_158d00012da2e0:
   friendly_name: 天然气密度
   icon: mdi:gas-cylinder
+binary_sensor.natgas_sensor_158d00012da2e0:
+  friendly_name: 天然气泄露
+  icon: mdi:gas-cylinder
 
 sensor.illuminance_f0b429aa0966:
   friendly_name: 客厅光强
