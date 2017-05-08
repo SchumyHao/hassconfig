@@ -6,3 +6,7 @@ media_player.livingroomtv:
 binary_sensor.somebodymoving:
   friendly_name: 有人移动
   device_class: motion
+binary_sensor.livingroomtvon:
+  friendly_name: 电视机已打开
+binary_sensor.livingrootstaon:
+  friendly_name: 机顶盒已打开
