@@ -1,6 +1,9 @@
 light.wc:
   friendly_name: 主卧床头灯
   icon: mdi:lightbulb
+light.lamp:
+  friendly_name: 次卧台灯
+  icon: mdi:lamp
 light.gateway_light_f0b429aa0966:
   friendly_name: 网关灯
   icon: mdi:lightbulb
