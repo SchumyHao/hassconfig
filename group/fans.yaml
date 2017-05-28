@@ -1,0 +1,7 @@
+LivingroomFans:
+  entities:
+    - fan.livingroomfan
+
+AllFans:
+  entities:
+    - fan.livingroomfan

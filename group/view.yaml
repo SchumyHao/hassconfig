@@ -12,6 +12,7 @@ default_view:
     - group.temperaturesensors
     - group.airquality
     - group.weatherforecast
+    - group.allfans
 livingroom:
   name: 客厅
   view: yes
@@ -24,6 +25,7 @@ livingroom:
     - group.livingroomlights
     - group.livingroomplugins
     - group.livingroomswitches
+    - group.livingroomfans
     - media_player.livingroomtv
 bedroom:
   name: 主卧
