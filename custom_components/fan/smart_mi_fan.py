@@ -43,6 +43,7 @@ FAN_SPEED = [SPEED_LEVEL_1, SPEED_LEVEL_2, SPEED_LEVEL_3, SPEED_LEVEL_4]
 FAN_PROP_TO_ATTR = {
     'speed': ATTR_SPEED,
     'speed_list': ATTR_SPEED_LIST,
+    'speed_num': 'speed_num',
     'oscillating': ATTR_OSCILLATING,
     'direction': ATTR_DIRECTION,
     'fan_temp_dec': 'temprature',
@@ -140,6 +141,9 @@ class SmartMiFan(FanEntity):
         self.host = host
         self.token = token
         self._fan = None
+        self._state_attrs = self.fan_get_prop()
+        self._is_on = (getattr(self, 'fan_power') == 'on')
+        self.oscillating = (getattr(self, 'fan_natural_level') != 0)
 
     @property
     def name(self) -> str:
@@ -154,6 +158,7 @@ class SmartMiFan(FanEntity):
     @property
     def state_attributes(self) -> dict:
         """Return optional state attributes."""
+        __last_is_on = (getattr(self, 'fan_power') == 'on')
         self._state_attrs = self.fan_get_prop()
         data = {}  # type: dict
 
@@ -165,20 +170,23 @@ class SmartMiFan(FanEntity):
             if value is not None:
                 data[attr] = value
 
+        __is_on = (getattr(self, 'fan_power') == 'on')
+
+        if (__last_is_on != __is_on):
+            if (__is_on != self._is_on):
+                _LOGGER.info("Sync fan status")
+                self._is_on = __is_on
+
         return data
 
     @property
     def is_on(self) -> bool:
         """Return true if the entity is on."""
-        self._state_attrs = self.fan_get_prop()
-        self._is_on = (getattr(self, 'fan_power') == 'on')
         return self._is_on
 
     @property
     def speed(self) -> str:
         """Return the current speed."""
-        self._state_attrs = self.fan_get_prop()
-        self._is_on = (getattr(self, 'fan_power') == 'on')
         if (self._is_on):
             self.oscillating = (getattr(self, 'fan_natural_level') != 0)
             if (self.oscillating):
@@ -199,9 +207,24 @@ class SmartMiFan(FanEntity):
         return self._speed
 
     @property
+    def speed_num(self) -> int:
+        """Return the current speed."""
+        if (self._is_on):
+            self.oscillating = (getattr(self, 'fan_natural_level') != 0)
+            if (self.oscillating):
+                speed_level = getattr(self, 'fan_natural_level')
+                return speed_level
+            else:
+                speed_level = getattr(self, 'fan_speed_level')
+                return speed_level
+        else:
+            return 0
+
+        return self._speed
+
+    @property
     def current_direction(self) -> str:
         """Fan direction."""
-        self._state_attrs = self.fan_get_prop()
         if (getattr(self, 'fan_angle_enable') == 'off'):
             self.direction = 'forward'
         else:
@@ -238,8 +261,14 @@ class SmartMiFan(FanEntity):
     @property
     def fan_angle(self) -> int:
         """fan rotate angle."""
-        if (self._state_attrs['angle_enable'] == "on"):
-            return self._state_attrs['angle']
+        if (self._is_on):
+            if (self._state_attrs['angle_enable'] == "on"):
+                if (self._state_attrs['angle'] == 118):
+                    return 120
+                else:
+                    return self._state_attrs['angle']
+            else:
+                return 0
         else:
             return 0
 
@@ -300,22 +329,27 @@ class SmartMiFan(FanEntity):
 
     def set_speed(self, speed: str) -> None:
         """Set the speed of the fan."""
-        if (self.oscillating):
-            if (speed in FAN_SPEED):
-                self.fan_set_natural_level(random.choice(FAN_NATURAL_SPEED[speed]))
-            else:
-                self.fan_set_natural_level(int(speed))
+        if (speed == '0'):
+            self.turn_off()
         else:
-            if (speed in FAN_SPEED):
-                self.fan_set_speed_level(random.choice(FAN_DIRECT_SPEED[speed]))
+            if (self.oscillating):
+                if (speed in FAN_SPEED):
+                    self.fan_set_natural_level(random.choice(FAN_NATURAL_SPEED[speed]))
+                else:
+                    self.fan_set_natural_level(int(speed))
             else:
-                self.fan_set_speed_level(int(speed))
+                if (speed in FAN_SPEED):
+                    self.fan_set_speed_level(random.choice(FAN_DIRECT_SPEED[speed]))
+                else:
+                    self.fan_set_speed_level(int(speed))
 
     def set_direction(self, direction: str) -> None:
         """Set the direction of the fan."""
         if (direction in ["left", "right"]):
             self.fan_set_move(direction)
         elif (direction in ["30", "60", "90", "120"]):
+            if (self._is_on == False):
+                self.turn_on()
             self.fan_set_angle(int(direction))
         elif (direction in ["0"]):
             self.fan_set_angle_enable("off")
@@ -341,6 +375,7 @@ class SmartMiFan(FanEntity):
 
     def fan_get_prop(self):
         prop = self.fan.send("get_prop", ["temp_dec","humidity","angle","speed","poweroff_time","power","ac_power","battery","angle_enable","speed_level","natural_level","child_lock","buzzer","led_b"])
+        _LOGGER.debug(prop)
         self._state = FanStatus(prop)
         attr = {'temp_dec': self._state.temp_dec,
                 'humidity': self._state.humidity,
