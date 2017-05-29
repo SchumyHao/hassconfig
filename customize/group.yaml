@@ -48,7 +48,7 @@ group.weathersuggestion:
   friendly_name: 建议
 group.onehourforecast:
   friendly_name: 一小时后天气
-group.livingroomfans:
+group.smartmifan:
   friendly_name: 客厅电风扇
 group.allfans:
   friendly_name: 电风扇

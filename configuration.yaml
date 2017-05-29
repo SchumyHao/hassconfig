@@ -28,6 +28,8 @@ http:
 
 group: !include_dir_merge_named group
 
+automation: !include automations.yaml
+
 # Enable Functions
 # Show links to resources in log and frontend
 #introduction:
@@ -55,17 +57,16 @@ panel_iframe:
     icon: mdi:vector-polyline
     url: http://192.168.1.198:1880/
 
+input_slider: !include input_sliders.yaml
+input_select: !include input_selects.yaml
+
 # Devices
 sensor: !include sensors.yaml
 media_player: !include media_players.yaml
 light: !include lights.yaml
-binary_sensor: !include binary_sensor.yaml
-
-fan:
-  - platform: smart_mi_fan
-    host: !secret fan_ip
-    name: "livingroomfan"
-    token: !secret fan_key
+binary_sensor: !include binary_sensors.yaml
+switch: !include switches.yaml
+fan: !include fans.yaml
 
 # xiaomi gateway
 xiaomi:

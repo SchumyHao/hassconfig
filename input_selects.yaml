@@ -1,0 +1,9 @@
+smart_mi_fan_shake_head_select:
+  name: smart_mi_fan_shake_head_select
+  options:
+    - '0'
+    - '30'
+    - '60'
+    - '90'
+    - '120'
+  initial: '0'

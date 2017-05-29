@@ -1,0 +1,6 @@
+smart_mi_fan_speed_slider:
+  name: smart_mi_fan_speed_slider
+  initial: 0
+  min: 0
+  max: 100
+  step: 1

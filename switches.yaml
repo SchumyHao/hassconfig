@@ -1,0 +1,22 @@
+- platform: broadlink
+  host: !secret rm_pro_ip
+  mac: !secret rm_pro_mac
+  switches:
+    reciever:
+      command_on: ''
+      command_off: ''
+
+- platform: template
+  switches:
+    smart_mi_fan_natural_wind_switch:
+      value_template: "{{ (states.fan.livingroomfan.state == 'on') and (states.fan.livingroomfan.attributes.natural_level != 0) }}"
+      turn_on:
+        service: fan.oscillate
+        data:
+          entity_id: fan.livingroomfan
+          oscillating: true
+      turn_off:
+        service: fan.oscillate
+        data:
+          entity_id: fan.livingroomfan
+          oscillating: false

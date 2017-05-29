@@ -1,0 +1,4 @@
+- platform: smart_mi_fan
+  host: !secret fan_ip
+  name: "livingroomfan"
+  token: !secret fan_key
