@@ -58,17 +58,11 @@ panel_iframe:
     url: http://192.168.1.198:1880/
 
 # Devices
-sensor: !include sensors.yaml
+#sensor: !include sensors.yaml
 media_player: !include media_players.yaml
 light: !include lights.yaml
 binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
-
-# xiaomi gateway
-xiaomi:
-  gateways:
-    - sid:
-      key: !secret xiaomi_key
 
 tts:
   - platform: baidu
