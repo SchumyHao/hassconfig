@@ -6,6 +6,14 @@
       command_on: ''
       command_off: ''
 
+- platform: chuangmi_ir
+  host: !secret chuangmi_ip
+  name: "livingroomirremote"
+  token: !secret chuangmi_key
+  switches:
+    reciever:
+      command_on: ''
+      command_off: ''
 - platform: template
   switches:
     smart_mi_fan_natural_wind_switch:
