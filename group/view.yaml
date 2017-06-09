@@ -58,6 +58,7 @@ wc:
     - sensor.temperature_158d0001150fac
     - group.wclights
     - group.wcplugins
+    - group.wcswitches
 kitchen:
   name: 厨房
   view: yes

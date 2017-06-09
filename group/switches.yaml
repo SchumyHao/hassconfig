@@ -10,3 +10,7 @@ BedroomSwitches:
 Bedroom2Switches:
   entities:
     - binary_sensor.switch_158d00013ecf71
+
+WCSwitches:
+  entities:
+    - switch.wcfan
