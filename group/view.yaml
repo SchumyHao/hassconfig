@@ -27,6 +27,7 @@ livingroom:
     - group.livingroomswitches
     - group.livingroomfans
     - media_player.livingroomtv
+    - media_player.mpd
 bedroom:
   name: 主卧
   view: yes
