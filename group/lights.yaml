@@ -7,6 +7,7 @@ LivingroomLights:
 BedroomLights:
   entities:
     - light.wc
+    - light.bedroomlamp
     - switch.wall_switch_158d000127a49d
 
 Bedroom2Lights:
@@ -27,6 +28,7 @@ AllLights:
     - switch.wall_switch_158d000127a49d
     - light.wc
     - light.lamp
+    - light.bedroomlamp
     - switch.wall_switch_158d00010b6cc9
     - switch.wall_switch_left_158d00010ee3fb
     - switch.wall_switch_right_158d00010ee3fb
