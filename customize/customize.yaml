@@ -1,6 +1,8 @@
 # TVs
 media_player.livingroomtv:
   friendly_name: 客厅电视
+media_player.mpd:
+  friendly_name: NAS音响
 
 # Template
 binary_sensor.somebodymoving:

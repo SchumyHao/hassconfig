@@ -2,3 +2,6 @@
 - platform: braviatv
   host: 192.168.1.114
   name: LivingRoomTV
+
+- platform: mpd
+  host: 127.0.0.1
