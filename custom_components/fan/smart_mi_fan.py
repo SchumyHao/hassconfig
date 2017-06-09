@@ -11,7 +11,8 @@ from homeassistant.components.fan import (SPEED_OFF, FanEntity, SUPPORT_SET_SPEE
                                           SUPPORT_OSCILLATE, SUPPORT_DIRECTION,
                                           ATTR_SPEED, ATTR_SPEED_LIST, ATTR_OSCILLATING, ATTR_DIRECTION)
 from homeassistant.const import CONF_NAME, CONF_HOST, CONF_TOKEN
-from mirobo import Vacuum
+
+REQUIREMENTS = ['python-miio==0.0.9']
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -243,9 +244,10 @@ class SmartMiFan(FanEntity):
 
     @property
     def fan(self):
+        import miio
         if not self._fan:
             _LOGGER.info("initializing with host %s token %s" % (self.host, self.token))
-            self._fan = Vacuum(self.host, self.token)
+            self._fan = miio.device(self.host, self.token)
         return self._fan
 
     @property
