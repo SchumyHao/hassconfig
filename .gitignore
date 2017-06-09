@@ -21,3 +21,5 @@ pyozw.sqlite
 .*
 !/.gitignore
 __pycache__
+@eaDir
+
