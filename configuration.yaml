@@ -42,9 +42,9 @@ updater:
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 # Enables support for tracking state changes over time.
-history:
+#history:
 # View all events in a logbook
-logbook:
+#logbook:
 # Track the sun
 sun:
 # enable visiable configurator
@@ -87,4 +87,8 @@ camera:
   - platform: ffmpeg
     name: xiaofang
     input: -rtsp_transport tcp -i rtsp://192.168.1.105/unicast
+
+influxdb:
+  host: 127.0.0.1
+
 
