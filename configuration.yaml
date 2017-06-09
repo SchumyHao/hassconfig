@@ -12,6 +12,7 @@ homeassistant:
   time_zone: Asia/Shanghai
   # overide device name and icon
   customize: !include_dir_merge_named customize
+  packages: !include_dir_named packages
 
 #mqtt:
 #  broker: 127.0.0.1
@@ -27,8 +28,7 @@ http:
   # base_url: example.duckdns.org:8123
 
 group: !include_dir_merge_named group
-
-automation: !include automations.yaml
+#automation: !include automations.yaml
 
 # Enable Functions
 # Show links to resources in log and frontend
@@ -57,16 +57,12 @@ panel_iframe:
     icon: mdi:vector-polyline
     url: http://192.168.1.198:1880/
 
-input_slider: !include input_sliders.yaml
-input_select: !include input_selects.yaml
-
 # Devices
 sensor: !include sensors.yaml
 media_player: !include media_players.yaml
 light: !include lights.yaml
 binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
-fan: !include fans.yaml
 
 # xiaomi gateway
 xiaomi:

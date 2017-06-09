@@ -25,7 +25,7 @@ livingroom:
     - group.livingroomlights
     - group.livingroomplugins
     - group.livingroomswitches
-    - group.livingroomfans
+    - group.smartmifan
     - media_player.livingroomtv
     - media_player.mpd
 bedroom:

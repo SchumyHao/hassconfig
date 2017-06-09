@@ -18,20 +18,3 @@
       name: 'wcfan'
       command_on: 'Z6VLAAkCAABpAgAAYgYAAKYIAACJEQAAoSMAAKScAABYeQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFAQEBAQEBAQEhISEhISEhIQEBISEBAQEBISEBASEhISFhNXE1AQ=='
       command_off: 'Z6VHAPEBAACBAgAASQYAAIYIAABqEQAAySMAAECcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFAQEBAQEBAQEhISEhISEhIQEBASEhAQEBISEhAQEhISFhNQE='
-
-
-
-- platform: template
-  switches:
-    smart_mi_fan_natural_wind_switch:
-      value_template: "{{ (states.fan.livingroomfan.state == 'on') and (states.fan.livingroomfan.attributes.natural_level != 0) }}"
-      turn_on:
-        service: fan.oscillate
-        data:
-          entity_id: fan.livingroomfan
-          oscillating: true
-      turn_off:
-        service: fan.oscillate
-        data:
-          entity_id: fan.livingroomfan
-          oscillating: false

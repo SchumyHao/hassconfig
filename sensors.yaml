@@ -99,13 +99,6 @@
       # 紫外线指数
       uv:
 
-- platform: template
-  sensors:
-    current_smart_mi_fan_speed:
-      value_template: '{{ states.fan.livingroomfan.attributes.speed_num }}'
-    current_smart_mi_fan_shake_head_angle:
-      value_template: '{{ states.fan.livingroomfan.attributes.angle }}'
-
 # Synology NAS
 #- platform: synologydsm
 #  host: !secret nas_ip
