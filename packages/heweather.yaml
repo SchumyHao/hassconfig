@@ -1,0 +1,163 @@
+sensor:
+  - platform: HeWeather
+    api_key: !secret heweatherkey
+    interval: 300
+    isShowWeatherPic: True
+    city: haidian
+    monitored_conditions:
+      # 空气质量指数
+      aqi:
+        # 空气质量指数
+        - aqi
+        # PM10
+        - pm10
+        # PM2.5
+        - pm25
+        # 空气质量
+        - qlty
+      # 当天预报
+      ToDay_forecast:
+        # 日出时间
+        - sr
+        # 日落时间
+        - ss
+        # 白天天气情况
+        - Weather_d
+        # 夜间天气情况
+        - Weather_n
+        # 相对湿度
+        - hum
+        # 降水概率
+        - pop
+        # 最高温度
+        - maxTmp
+        # 最低温度
+        - minTmp
+        # 紫外线指数
+        - uv
+        # 能见度
+        - vis
+        # 风向
+        - dir
+        # 风力等级
+        - sc
+      # 1小时预报
+      1Hour_forecast:
+        # 天气情况
+        - Weather
+        # 相对湿度
+        - hum
+        # 降水概率
+        - pop
+        # 温度
+        - tmp
+        # 风向
+        - dir
+        # 风力等级
+        - sc
+      # 明天预报
+      Tomorrow_forecast:
+      # 后天预报
+      OfterTomorrow_forecast:
+
+      # 3小时预报
+      3Hour_forecast:
+      # 6小时预报
+      6Hour_forecast:
+
+      # 即时预报
+      now:
+        # 天气情况
+        - Weather
+        # 体感温度
+        - fl
+        # 相对湿度
+        - hum
+        # 温度
+        - tmp
+        # 能见度
+        - vis
+        # 风向
+        - dir
+        # 风力等级
+        - sc
+      # 生活指数
+      suggestion:
+        # 空气指数
+        air:
+          # 简介
+          - brf
+          # 数据详情
+          - txt
+        # 舒适度指数
+        comf:
+        # 洗车指数
+        cw:
+        # 穿衣指数
+        drsg:
+        # 运动指数
+        sport:
+        # 紫外线指数
+        uv:
+
+group:
+  AirQuality:
+    entities:
+      - sensor.aqi
+      - sensor.aqi_qlty
+      - sensor.aqi_pm10
+      - sensor.aqi_pm25
+
+  WeatherNow:
+    entities:
+      - sensor.now_weather
+      - sensor.now_fl
+      - sensor.now_hum
+      - sensor.now_tmp
+      - sensor.now_vis
+      - sensor.now_dir
+      - sensor.now_sc
+
+  WeatherForecast:
+    entities:
+      - sensor.now_weather
+      - sensor.1hour_weather
+      - sensor.3hour_weather
+      - sensor.6hour_weather
+      - sensor.3hour_weather
+      - sensor.1hour_weather
+      - sensor.oftertomorrowday_weather_day
+
+  TodayForecast:
+    entities:
+      - sensor.today_sr
+      - sensor.today_ss
+      - sensor.today_weather_day
+      - sensor.today_weather_night
+      - sensor.today_hum
+      - sensor.today_pop
+      - sensor.today_mintmp
+      - sensor.today_maxtmp
+      - sensor.today_uv
+      - sensor.today_vis
+      - sensor.today_dir
+      - sensor.today_sc
+
+  OneHourForecast:
+    entities:
+      - sensor.1hour_weather
+      - sensor.1hour_hum
+      - sensor.1hour_pop
+      - sensor.1hour_tmp
+      - sensor.1hour_dir
+      - sensor.1hour_sc
+
+  WeatherSuggestion:
+    entities:
+      - sensor.air_suggestion_brf
+      - sensor.air_suggestion_txt
+      - sensor.comf_suggestion_brf
+      - sensor.cw_suggestion_brf
+      - sensor.drsg_suggestion_brf
+      - sensor.sport_suggestion_brf
+      - sensor.uv_suggestion_brf
