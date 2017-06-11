@@ -1,0 +1,5 @@
+light:
+  - platform: philips_eyecare
+    host: !secret philips_lamp_ip
+    name: "bedroomlamp"
+    token: !secret philips_lamp_key
