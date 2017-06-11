@@ -1,0 +1,9 @@
+tts:
+  - platform: baidu
+    language: zh
+    speed: 5
+    pitch: 5
+    volume: 5
+    person: 1
+    api_key: !secret baiduttsapikey
+    secret_key: !secret baiduttssecretkey
