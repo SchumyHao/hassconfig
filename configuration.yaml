@@ -28,7 +28,6 @@ http:
   # base_url: example.duckdns.org:8123
 
 group: !include_dir_merge_named group
-#automation: !include automations.yaml
 
 # Enable Functions
 # Show links to resources in log and frontend
@@ -50,39 +49,5 @@ sun:
 # enable visiable configurator
 config:
 
-# panel
-panel_iframe:
-  node_red:
-    title: node_red
-    icon: mdi:vector-polyline
-    url: http://192.168.1.198:1880/
-
 # Devices
-#sensor: !include sensors.yaml
-media_player: !include media_players.yaml
-light: !include lights.yaml
 binary_sensor: !include binary_sensors.yaml
-switch: !include switches.yaml
-
-tts:
-  - platform: baidu
-    language: zh
-    speed: 5
-    pitch: 5
-    volume: 5
-    person: 1
-    api_key: !secret baiduttsapikey
-    secret_key: !secret baiduttssecretkey
-
-# Camera
-ffmpeg:
-  ffmpeg_bin: /usr/bin/ffmpeg
-camera:
-  - platform: ffmpeg
-    name: xiaofang
-    input: -rtsp_transport tcp -i rtsp://192.168.1.105/unicast
-
-influxdb:
-  host: 127.0.0.1
-
-
