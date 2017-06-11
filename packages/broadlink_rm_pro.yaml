@@ -1,0 +1,8 @@
+switch:
+  - platform: broadlink
+    host: !secret rm_pro_ip
+    mac: !secret rm_pro_mac
+    switches:
+      reciever:
+        command_on: ''
+        command_off: ''
