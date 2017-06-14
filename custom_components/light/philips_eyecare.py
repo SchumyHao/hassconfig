@@ -10,7 +10,7 @@ from homeassistant.components.light import (
 
 from homeassistant.const import CONF_NAME, CONF_HOST, CONF_TOKEN
 
-REQUIREMENTS = ['python-miio==0.0.9']
+REQUIREMENTS = ['python-miio==0.0.11']
 
 _LOGGER = logging.getLogger(__name__)
 
