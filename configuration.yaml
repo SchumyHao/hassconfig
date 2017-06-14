@@ -11,7 +11,6 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Asia/Shanghai
   # overide device name and icon
-  customize: !include_dir_merge_named customize
   packages: !include_dir_named packages
 
 #mqtt:
@@ -26,8 +25,6 @@ http:
   api_password: !secret http_passwd
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
-
-group: !include_dir_merge_named group
 
 # Enable Functions
 # Show links to resources in log and frontend
@@ -48,6 +45,3 @@ conversation:
 sun:
 # enable visiable configurator
 config:
-
-# Devices
-binary_sensor: !include binary_sensors.yaml

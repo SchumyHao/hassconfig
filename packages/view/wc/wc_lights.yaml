@@ -1,0 +1,11 @@
+group:
+  wc_lights:
+    entities:
+      - switch.wall_switch_left_158d00010ee3fb
+      - switch.wall_switch_right_158d00010ee3fb
+
+homeassistant:
+  customize:
+    group.wc_lights:
+      friendly_name: 洗手间灯
+      icon: mdi:ceiling-light

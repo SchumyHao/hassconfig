@@ -1,0 +1,6 @@
+homeassistant:
+  customize:
+    # cube
+    binary_sensor.cube_158d0001147279:
+      friendly_name: 客厅魔方
+      icon: mdi:cube-outline

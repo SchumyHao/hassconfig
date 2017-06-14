@@ -1,0 +1,7 @@
+homeassistant:
+  customize:
+    # door/window
+    binary_sensor.door_window_sensor_158d0001025565:
+      friendly_name: 客厅门
+    binary_sensor.door_window_sensor_158d0001549234:
+      friendly_name: 洗手间门

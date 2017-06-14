@@ -1,0 +1,10 @@
+group:
+  livingroom_switches:
+    entities:
+      - binary_sensor.cube_158d0001147279
+      - binary_sensor.switch_158d000104fad4
+
+homeassistant:
+  customize:
+    group.livingroom_switches:
+      friendly_name: 客厅开关

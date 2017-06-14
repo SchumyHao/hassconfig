@@ -1,0 +1,6 @@
+homeassistant:
+  customize:
+    # natgas
+    binary_sensor.natgas_sensor_158d00012da2e0:
+      friendly_name: 天然气泄露
+      icon: mdi:gas-cylinder

@@ -1,0 +1,14 @@
+group:
+  default_plugins:
+    entities:
+      - group.balcony_plugins
+      - group.bedroom_plugins
+      - group.bedroom2_plugins
+      - group.kitchen_plugins
+      - group.livingroom_plugins
+      - group.wc_plugins
+
+homeassistant:
+  customize:
+    group.default_plugins:
+      friendly_name: 插座

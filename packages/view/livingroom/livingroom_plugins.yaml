@@ -1,0 +1,11 @@
+group:
+  livingroom_plugins:
+    entities:
+      - switch.plug_158d00010ad5d4
+      - switch.wall_plug_158d00015751d5
+
+homeassistant:
+  customize:
+    group.livingroom_plugins:
+      friendly_name: 客厅插座
+      icon: mdi:power-socket

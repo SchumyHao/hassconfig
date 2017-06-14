@@ -1,0 +1,16 @@
+light:
+  - platform: yeelight
+    devices:
+      192.168.1.176:
+        name: wc
+      192.168.1.240:
+        name: lamp
+
+homeassistant:
+  customize:
+    light.wc:
+      friendly_name: 主卧床头灯
+      icon: mdi:lightbulb
+    light.lamp:
+      friendly_name: 次卧台灯
+      icon: mdi:lamp

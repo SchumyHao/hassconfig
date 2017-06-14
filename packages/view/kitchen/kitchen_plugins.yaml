@@ -1,0 +1,10 @@
+group:
+  kitchen_plugins:
+    entities:
+      - switch.wall_plug_158d0001574f48
+
+homeassistant:
+  customize:
+    group.kitchen_plugins:
+      friendly_name: 厨房插座
+      icon: mdi:power-socket

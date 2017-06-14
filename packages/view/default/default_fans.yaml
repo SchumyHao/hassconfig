@@ -1,0 +1,10 @@
+group:
+  default_fans:
+    entities:
+      - group.smartmifan
+      - switch.wcfan
+
+homeassistant:
+  customize:
+    group.default_fans:
+      friendly_name: 风扇

@@ -1,0 +1,9 @@
+group:
+  kitchen_natgas:
+    entities:
+      - binary_sensor.natgas_sensor_158d00012da2e0
+
+homeassistant:
+  customize:
+    group.kitchen_natgas:
+      friendly_name: 天然气传感器

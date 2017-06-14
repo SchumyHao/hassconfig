@@ -101,14 +101,14 @@ sensor:
         uv:
 
 group:
-  AirQuality:
+  weather_airquality:
     entities:
       - sensor.aqi
       - sensor.aqi_qlty
       - sensor.aqi_pm10
       - sensor.aqi_pm25
 
-  WeatherNow:
+  weather_weathernow:
     entities:
       - sensor.now_weather
       - sensor.now_fl
@@ -118,7 +118,7 @@ group:
       - sensor.now_dir
       - sensor.now_sc
 
-  WeatherForecast:
+  weather_weatherforecast:
     entities:
       - sensor.now_weather
       - sensor.1hour_weather
@@ -128,7 +128,7 @@ group:
       - sensor.1hour_weather
       - sensor.oftertomorrowday_weather_day
 
-  TodayForecast:
+  weather_todayforecast:
     entities:
       - sensor.today_sr
       - sensor.today_ss
@@ -143,7 +143,7 @@ group:
       - sensor.today_dir
       - sensor.today_sc
 
-  OneHourForecast:
+  weather_oneHourforecast:
     entities:
       - sensor.1hour_weather
       - sensor.1hour_hum
@@ -152,7 +152,7 @@ group:
       - sensor.1hour_dir
       - sensor.1hour_sc
 
-  WeatherSuggestion:
+  weather_weathersuggestion:
     entities:
       - sensor.air_suggestion_brf
       - sensor.air_suggestion_txt
@@ -161,3 +161,98 @@ group:
       - sensor.drsg_suggestion_brf
       - sensor.sport_suggestion_brf
       - sensor.uv_suggestion_brf
+
+homeassistant:
+  customize:
+    sun.sun:
+      friendly_name: 昼夜
+    sensor.aqi:
+      friendly_name: 指数
+    sensor.aqi_qlty:
+      friendly_name: 质量
+    sensor.aqi_pm10:
+      friendly_name: PM10
+    sensor.aqi_pm25:
+      friendly_name: PM2.5
+    sensor.now_weather:
+      friendly_name: 天气
+    sensor.now_fl:
+      friendly_name: 体感温度
+    sensor.now_hum:
+      friendly_name: 湿度
+    sensor.now_tmp:
+      friendly_name: 温度
+    sensor.now_vis:
+      friendly_name: 能见度
+    sensor.now_dir:
+      friendly_name: 风向
+    sensor.now_sc:
+      friendly_name: 风速
+    sensor.3hour_weather:
+      friendly_name: 三小时后天气
+    sensor.6hour_weather:
+      friendly_name: 六小时后天气
+    sensor.oftertomorrowday_weather_day:
+      friendly_name: 后天天气
+    sensor.today_sr:
+      friendly_name: 日出时间
+    sensor.today_ss:
+      friendly_name: 日落时间
+    sensor.today_weather_day:
+      friendly_name: 白天天气
+    sensor.today_weather_night:
+      friendly_name: 夜间天气
+    sensor.today_hum:
+      friendly_name: 湿度
+    sensor.today_pop:
+      friendly_name: 气压
+    sensor.today_mintmp:
+      friendly_name: 最低温度
+    sensor.today_maxtmp:
+      friendly_name: 最高温度
+    sensor.today_uv:
+      friendly_name: 紫外线指数
+    sensor.today_vis:
+      friendly_name: 能见度
+    sensor.today_dir:
+      friendly_name: 风向
+    sensor.today_sc:
+      friendly_name: 风速
+    sensor.1hour_weather:
+      friendly_name: 一小时后天气
+    sensor.1hour_hum:
+      friendly_name: 湿度
+    sensor.1hour_pop:
+      friendly_name: 气压
+    sensor.1hour_tmp:
+      friendly_name: 温度
+    sensor.1hour_dir:
+      friendly_name: 风向
+    sensor.1hour_sc:
+      friendly_name: 风度
+    sensor.air_suggestion_brf:
+      friendly_name: 空气指数
+    sensor.air_suggestion_txt:
+      friendly_name: 空气指数详情
+    sensor.comf_suggestion_brf:
+      friendly_name: 舒适度
+    sensor.cw_suggestion_brf:
+      friendly_name: 洗车建议
+    sensor.drsg_suggestion_brf:
+      friendly_name: 穿衣建议
+    sensor.sport_suggestion_brf:
+      friendly_name: 运动建议
+    sensor.uv_suggestion_brf:
+      friendly_name: 紫外线指数
+    group.weather_airquality:
+      friendly_name: 空气质量
+    group.weather_todayforecast:
+      friendly_name: 当日天气
+    group.weather_weatherforecast:
+      friendly_name: 天气预报
+    group.weather_weathernow:
+      friendly_name: 当前天气
+    group.weather_weathersuggestion:
+      friendly_name: 建议
+    group.weather_onehourforecast:
+      friendly_name: 一小时后天气

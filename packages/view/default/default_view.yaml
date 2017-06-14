@@ -1,0 +1,16 @@
+group:
+  default_view:
+    name: 郝家
+    view: yes
+    entities:
+      - sun.sun
+      - binary_sensor.somebodymoving
+      - group.default_lights
+      - group.default_plugins
+      - group.default_fans
+      - group.default_illuminance
+      - group.default_natgas
+      - group.default_humidity
+      - group.default_temperature
+      - group.weather_airquality
+      - group.weather_weatherforecast

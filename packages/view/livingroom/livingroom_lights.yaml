@@ -1,0 +1,13 @@
+group:
+  livingroom_lights:
+    entities:
+      - light.gateway_light_f0b429aa0966
+      - switch.wall_switch_left_158d00010e3235
+      - switch.wall_switch_right_158d00010e3235
+      - group.ceilinglamp
+
+homeassistant:
+  customize:
+    group.livingroom_lights:
+      friendly_name: 客厅灯
+      icon: mdi:ceiling-light

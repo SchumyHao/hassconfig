@@ -1,0 +1,11 @@
+group:
+  weather:
+    name: 天气预报
+    view: yes
+    entities:
+      - group.weather_airquality
+      - group.weather_weathernow
+      - group.weather_weatherforecast
+      - group.weather_todayforecast
+      - group.weather_oneHourforecast
+      - group.weather_weathersuggestion

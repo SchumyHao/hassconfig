@@ -1,0 +1,9 @@
+group:
+  livingroom_illuminance:
+    entities:
+      - sensor.illuminance_f0b429aa0966
+
+homeassistant:
+  customize:
+    group.livingroom_illuminance:
+      friendly_name: 光强传感器

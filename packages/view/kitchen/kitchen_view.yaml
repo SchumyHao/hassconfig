@@ -1,0 +1,8 @@
+group:
+  kitchen:
+    name: 厨房
+    view: yes
+    entities:
+      - binary_sensor.motion_sensor_158d0000f431dd
+      - group.kitchen_plugins
+      - group.kitchen_natgas

@@ -1,0 +1,15 @@
+xiaomi:
+  gateways:
+    - sid:
+      key: !secret xiaomi_key
+
+homeassistant:
+  customize:
+    # illuminance
+    sensor.illuminance_f0b429aa0966:
+      friendly_name: 客厅光强
+      icon: mdi:white-balance-sunny
+    # gateway light
+    light.gateway_light_f0b429aa0966:
+      friendly_name: 网关灯
+      icon: mdi:lightbulb

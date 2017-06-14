@@ -1,0 +1,12 @@
+group:
+  default_lights:
+    entities:
+      - group.bedroom_lights
+      - group.bedroom2_lights
+      - group.livingroom_lights
+      - group.wc_lights
+
+homeassistant:
+  customize:
+    group.default_lights:
+      friendly_name: 灯

@@ -99,3 +99,19 @@ group:
       - input_slider.smart_mi_fan_speed_slider
       - input_select.smart_mi_fan_shake_head_select
       - switch.smart_mi_fan_natural_wind_switch
+
+homeassistant:
+  customize:
+    fan.smartmifan:
+      friendly_name: 智米风扇
+    input_slider.smart_mi_fan_speed_slider:
+      friendly_name: 风速调节
+    input_select.smart_mi_fan_shake_head_select:
+      friendly_name: 摇头调节
+    switch.smart_mi_fan_natural_wind_switch:
+      friendly_name: 自然风开关
+      icon: mdi:weather-windy
+    group.smartmifan:
+      friendly_name: 智米风扇
+      icon: mdi:fan
+

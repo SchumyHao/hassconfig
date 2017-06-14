@@ -1,0 +1,15 @@
+group:
+  livingroom:
+    name: 客厅
+    view: yes
+    entities:
+      - binary_sensor.door_window_sensor_158d0001025565
+      - binary_sensor.motion_sensor_158d0001188401
+      - sensor.humidity_158d0001069997
+      - sensor.temperature_158d0001069997
+      - group.livingroom_switches
+      - group.livingroom_illuminance
+      - group.livingroom_plugins
+      - group.livingroom_lights
+      - group.livingroom_media_players
+      - group.livingroom_fans

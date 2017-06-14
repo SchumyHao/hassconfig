@@ -1,0 +1,33 @@
+group:
+  default_temperature:
+    entities:
+      - sensor.temperature_158d0001069997
+      - sensor.temperature_158d00010698f6
+      - sensor.temperature_158d00010699fe
+      - sensor.temperature_158d0001150fac
+
+  default_humidity:
+    entities:
+      - sensor.humidity_158d0001069997
+      - sensor.humidity_158d00010698f6
+      - sensor.humidity_158d00010699fe
+      - sensor.humidity_158d0001150fac
+
+  default_illuminance:
+    entities:
+      - sensor.illuminance_f0b429aa0966
+
+  default_natgas:
+    entities:
+      - binary_sensor.natgas_sensor_158d00012da2e0
+
+homeassistant:
+  customize:
+    group.default_humidity:
+      friendly_name: 室内湿度
+    group.default_temperature:
+      friendly_name: 室内温度
+    group.default_illuminance:
+      friendly_name: 光线传感器
+    group.default_natgas:
+      friendly_name: 天然气传感器

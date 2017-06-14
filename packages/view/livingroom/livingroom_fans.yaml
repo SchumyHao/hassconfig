@@ -1,0 +1,9 @@
+group:
+  livingroom_fans:
+    entities:
+      - group.smartmifan
+
+homeassistant:
+  customize:
+    group.livingroom_fans:
+      friendly_name: 客厅电风扇

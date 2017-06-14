@@ -1,0 +1,10 @@
+group:
+  wc_plugins:
+    entities:
+      - switch.wall_plug_158d000159e6b9
+
+homeassistant:
+  customize:
+    group.wc_plugins:
+      friendly_name: 洗手间插座
+      icon: mdi:power-socket

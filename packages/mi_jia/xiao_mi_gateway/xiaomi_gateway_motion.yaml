@@ -1,0 +1,33 @@
+binary_sensor:
+  - platform: template
+    sensors:
+      somebodymoving:
+        device_class: 'moving'
+        value_template: >-
+          {%- if is_state("binary_sensor.motion_sensor_158d0000f4164c", "off") and 
+              is_state("binary_sensor.motion_sensor_158d0000f418cf", "off") and 
+              is_state("binary_sensor.motion_sensor_158d0000f431dd", "off") and 
+              is_state("binary_sensor.motion_sensor_158d0000f44617", "off") and 
+              is_state("binary_sensor.motion_sensor_158d0001188401", "off") -%}
+          false
+          {%- else -%}
+          true
+          {%- endif %}
+
+homeassistant:
+  customize:
+    # template
+    binary_sensor.somebodymoving:
+      friendly_name: 有人移动
+      device_class: motion
+    # motion
+    binary_sensor.motion_sensor_158d0000f4164c:
+      friendly_name: 次卧人体传感器
+    binary_sensor.motion_sensor_158d0000f418cf:
+      friendly_name: 主卧东人体传感器
+    binary_sensor.motion_sensor_158d0000f431dd:
+      friendly_name: 厨房人体传感器
+    binary_sensor.motion_sensor_158d0000f44617:
+      friendly_name: 洗手间人体传感器
+    binary_sensor.motion_sensor_158d0001188401:
+      friendly_name: 客厅人体传感器

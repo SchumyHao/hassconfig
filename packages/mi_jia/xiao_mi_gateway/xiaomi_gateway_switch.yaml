@@ -1,0 +1,9 @@
+homeassistant:
+  customize:
+    # switche
+    binary_sensor.switch_158d000104fad4:
+      friendly_name: 门铃
+    binary_sensor.switch_158d0001137e6c:
+      friendly_name: 主卧按钮
+    binary_sensor.switch_158d00013ecf71:
+      friendly_name: 次卧按钮

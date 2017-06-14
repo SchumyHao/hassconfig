@@ -1,0 +1,149 @@
+input_select:
+  chuang_mi_ir_remote_ceilinglamp_select:
+    name: chuang_mi_ir_remote_ceilinglamp_select
+    options:
+      - '无'
+      - '小夜灯'
+      - '最亮'
+      - '中亮'
+      - '较暗'
+      - '冷白'
+      - '暖白'
+      - '暖黄'
+      - '阅读'
+      - '自然'
+      - '温馨'
+    initial: '无'
+
+input_boolean:
+  chuang_mi_ir_remote_ceilinglamp_boolean_brightness_plus:
+    name: chuang_mi_ir_remote_ceilinglamp_boolean_brightness_plus
+    initial: off
+  chuang_mi_ir_remote_ceilinglamp_boolean_brightness_minus:
+    name: chuang_mi_ir_remote_ceilinglamp_boolean_brightness_minus
+    initial: off
+  chuang_mi_ir_remote_ceilinglamp_boolean_color_cold_plus:
+    name: chuang_mi_ir_remote_ceilinglamp_boolean_color_cold_plus
+    initial: off
+  chuang_mi_ir_remote_ceilinglamp_boolean_color_cold_minus:
+    name: chuang_mi_ir_remote_ceilinglamp_boolean_color_cold_minus
+    initial: off
+
+
+automation:
+  - id: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_night_view
+    alias: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_night_view
+    trigger:
+      - platform: state
+        entity_id: input_select.chuang_mi_ir_remote_ceilinglamp_select
+        to: '小夜灯'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.ceilinglamp_night_view
+  - id: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_max_brightness
+    alias: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_max_brightness
+    trigger:
+      - platform: state
+        entity_id: input_select.chuang_mi_ir_remote_ceilinglamp_select
+        to: '最亮'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.ceilinglamp_max_brightness
+  - id: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_mid_brightness
+    alias: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_mid_brightness
+    trigger:
+      - platform: state
+        entity_id: input_select.chuang_mi_ir_remote_ceilinglamp_select
+        to: '中亮'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.ceilinglamp_mid_brightness
+  - id: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_min_brightness
+    alias: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_min_brightness
+    trigger:
+      - platform: state
+        entity_id: input_select.chuang_mi_ir_remote_ceilinglamp_select
+        to: '较暗'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.ceilinglamp_min_brightness
+  - id: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_color_max_cold
+    alias: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_color_max_cold
+    trigger:
+      - platform: state
+        entity_id: input_select.chuang_mi_ir_remote_ceilinglamp_select
+        to: '冷白'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.ceilinglamp_color_max_cold
+  - id: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_color_mid_cold
+    alias: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_color_mid_cold
+    trigger:
+      - platform: state
+        entity_id: input_select.chuang_mi_ir_remote_ceilinglamp_select
+        to: '暖白'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.ceilinglamp_color_mid_cold
+  - id: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_color_min_cold
+    alias: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_color_min_cold
+    trigger:
+      - platform: state
+        entity_id: input_select.chuang_mi_ir_remote_ceilinglamp_select
+        to: '暖黄'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.ceilinglamp_color_min_cold
+  - id: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_mode_reading
+    alias: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_mode_reading
+    trigger:
+      - platform: state
+        entity_id: input_select.chuang_mi_ir_remote_ceilinglamp_select
+        to: '阅读'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.ceilinglamp_mode_reading
+  - id: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_mode_natrul
+    alias: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_mode_natrul
+    trigger:
+      - platform: state
+        entity_id: input_select.chuang_mi_ir_remote_ceilinglamp_select
+        to: '自然'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.ceilinglamp_mode_natrul
+  - id: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_mode_sweet
+    alias: chuang_mi_ir_remote_ceilinglamp_select_control_lamp_mode_sweet
+    trigger:
+      - platform: state
+        entity_id: input_select.chuang_mi_ir_remote_ceilinglamp_select
+        to: '温馨'
+    action:
+      - service: switch.turn_on
+        data_template:
+          entity_id: switch.ceilinglamp_mode_sweet
+
+group:
+  ceilinglamp:
+    entities:
+      - switch.ceilinglamp_on_off
+      - input_select.chuang_mi_ir_remote_ceilinglamp_select
+      - input_boolean.chuang_mi_ir_remote_ceilinglamp_boolean_brightness_plus
+      - input_boolean.chuang_mi_ir_remote_ceilinglamp_boolean_brightness_minus
+      - input_boolean.chuang_mi_ir_remote_ceilinglamp_boolean_color_cold_plus
+      - input_boolean.chuang_mi_ir_remote_ceilinglamp_boolean_color_cold_minus
+
+homeassistant:
+  customize:
+    switch.ceilinglamp_on_off:
+      friendly_name: 吸顶灯开关
+      custom_ui_state_card: custom-ui

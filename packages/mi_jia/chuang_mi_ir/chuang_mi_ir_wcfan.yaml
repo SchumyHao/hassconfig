@@ -1,0 +1,5 @@
+homeassistant:
+  customize:
+    switch.wcfan:
+      friendly_name: 排风扇
+      icon: mdi:fan

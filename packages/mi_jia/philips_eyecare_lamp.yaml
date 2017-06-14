@@ -1,0 +1,11 @@
+light:
+  - platform: philips_eyecare
+    host: !secret philips_lamp_ip
+    name: "bedroomlamp"
+    token: !secret philips_lamp_key
+
+homeassistant:
+  customize:
+    light.bedroomlamp:
+      friendly_name: 主卧台灯
+      icon: mdi:lamp

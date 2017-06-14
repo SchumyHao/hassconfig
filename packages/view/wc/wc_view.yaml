@@ -1,0 +1,12 @@
+group:
+  wc:
+    name: 洗手间
+    view: yes
+    entities:
+      - binary_sensor.door_window_sensor_158d0001549234
+      - binary_sensor.motion_sensor_158d0000f44617
+      - sensor.humidity_158d0001150fac
+      - sensor.temperature_158d0001150fac
+      - group.wc_plugins
+      - group.wc_lights
+      - group.wc_fans

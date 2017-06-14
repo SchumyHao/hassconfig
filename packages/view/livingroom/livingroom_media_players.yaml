@@ -1,0 +1,10 @@
+group:
+  livingroom_media_players:
+    entities:
+      - media_player.livingroomtv
+      - media_player.mpd
+
+homeassistant:
+  customize:
+    group.livingroom_media_players:
+      friendly_name: 客厅多媒体

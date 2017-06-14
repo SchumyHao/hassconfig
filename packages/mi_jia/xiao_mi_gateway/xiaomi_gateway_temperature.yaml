@@ -1,0 +1,11 @@
+homeassistant:
+  customize:
+    # temperature
+    sensor.temperature_158d0001069997:
+      friendly_name: 客厅温度
+    sensor.temperature_158d00010699fe:
+      friendly_name: 次卧温度
+    sensor.temperature_158d00010698f6:
+      friendly_name: 主卧温度
+    sensor.temperature_158d0001150fac:
+      friendly_name: 洗手间温度

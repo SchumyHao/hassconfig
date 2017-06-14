@@ -2,3 +2,16 @@ media_player:
   - platform: braviatv
     host: 192.168.1.114
     name: LivingRoomTV
+
+binary_sensor:
+  - platform: template
+    sensors:
+      livingroomtvon:
+        value_template: "{{states.media_player.livingroomtv.state == 'on'}}"
+
+homeassistant:
+  customize:
+    media_player.livingroomtv:
+      friendly_name: 客厅电视
+    binary_sensor.livingroomtvon:
+      friendly_name: 电视机已打开

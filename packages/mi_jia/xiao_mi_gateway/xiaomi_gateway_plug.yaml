@@ -1,0 +1,18 @@
+binary_sensor:
+  - platform: template
+    sensors:
+      livingrootstaon:
+        value_template: "{{states.switch.plug_158d00010ad5d4.state == 'on'}}"
+
+homeassistant:
+  customize:
+    # template
+    binary_sensor.livingrootstaon:
+      friendly_name: 机顶盒已打开
+    # plug
+    switch.plug_158d00010ad5d4:
+      friendly_name: 机顶盒插座
+      icon: mdi:power-socket
+    switch.plug_158d00011049fc:
+      friendly_name: 次卧电暖气插座
+      icon: mdi:power-socket

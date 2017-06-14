@@ -1,0 +1,9 @@
+group:
+  wc_fans:
+    entities:
+      - switch.wcfan
+
+homeassistant:
+  customize:
+    group.wc_fans:
+      friendly_name: 洗手间风扇
