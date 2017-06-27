@@ -11,6 +11,22 @@ homeassistant:
     light.wc:
       friendly_name: 主卧床头灯
       icon: mdi:lightbulb
+      custom_ui_state_card: custom-ui
+      state_card_mode: break-slider
+      stretch_slider: true
+      show_last_changed: false
+      hide_control: false
+      slider_theme:
+        min: 0
+        max: 255
     light.lamp:
       friendly_name: 次卧台灯
       icon: mdi:lamp
+      custom_ui_state_card: custom-ui
+      state_card_mode: break-slider
+      stretch_slider: true
+      show_last_changed: false
+      hide_control: false
+      slider_theme:
+        min: 0
+        max: 255
