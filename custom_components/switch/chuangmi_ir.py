@@ -138,11 +138,6 @@ class ChuangmiIRSwitch(SwitchDevice):
         return self._name
 
     @property
-    def assumed_state(self):
-        """Return true if unable to access real state of entity."""
-        return True
-
-    @property
     def should_poll(self):
         """No polling needed."""
         return False
