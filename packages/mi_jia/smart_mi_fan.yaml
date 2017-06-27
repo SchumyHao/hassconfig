@@ -4,14 +4,6 @@ fan:
     name: "smartmifan"
     token: !secret fan_key
 
-input_slider:
-  smart_mi_fan_speed_slider:
-    name: smart_mi_fan_speed_slider
-    initial: 0
-    min: 0
-    max: 100
-    step: 1
-
 input_select:
   smart_mi_fan_shake_head_select:
     name: smart_mi_fan_shake_head_select
@@ -26,10 +18,35 @@ input_select:
 sensor:
   - platform: template
     sensors:
-      current_smart_mi_fan_speed:
-        value_template: '{{ states.fan.smartmifan.attributes.speed_num }}'
       current_smart_mi_fan_shake_head_angle:
         value_template: '{{ states.fan.smartmifan.attributes.angle }}'
+      current_smart_mi_fan_battery:
+        value_template: '{{ states.fan.smartmifan.attributes.battery }}'
+
+light:
+  - platform: template
+    lights:
+      smart_mi_fan:
+        value_template: '{{is_state("fan.smartmifan", "on")}}'
+        level_template: >-
+          {%- if is_state("fan.smartmifan", "on") -%}
+            {{ (states.fan.smartmifan.attributes.speed_num / 100 *255) | int }}
+          {%- else -%}
+            0
+          {%- endif -%}
+        turn_on:
+          service: fan.turn_on
+          data:
+            entity_id: fan.smartmifan
+        turn_off:
+          service: fan.turn_off
+          data:
+            entity_id: fan.smartmifan
+        set_level:
+          service: fan.set_speed
+          data_template:
+            entity_id: fan.smartmifan
+            speed: '{{ (brightness / 255 * 100) | int }}'
 
 switch:
   - platform: template
@@ -48,28 +65,6 @@ switch:
             oscillating: false
 
 automation:
-  - id: smart_mi_fan_speed_slider_control_fan
-    alias: smart_mi_fan_speed_slider_control
-    trigger:
-      - platform: state
-        entity_id: input_slider.smart_mi_fan_speed_slider
-    action:
-      - service: fan.set_speed
-        data_template:
-          entity_id: fan.smartmifan
-          speed: '{{ trigger.to_state.state | int }}'
-
-  - id: smart_mi_fan_speed_sync_with_slider
-    alias: smart_mi_fan_speed_sync_with_slider
-    trigger:
-      - platform: state
-        entity_id: sensor.current_smart_mi_fan_speed
-    action:
-      - service: input_slider.select_value
-        data_template:
-          entity_id: input_slider.smart_mi_fan_speed_slider
-          value: '{{ trigger.to_state.state }}'
-
   - id: smart_mi_fan_shake_head_select_control_fan
     alias: smart_mi_fan_shake_head_select_control_fan
     trigger:
@@ -95,17 +90,26 @@ automation:
 group:
   SmartMiFan:
     entities:
-      - fan.smartmifan
-      - input_slider.smart_mi_fan_speed_slider
+      - light.smart_mi_fan
       - input_select.smart_mi_fan_shake_head_select
       - switch.smart_mi_fan_natural_wind_switch
 
 homeassistant:
   customize:
-    fan.smartmifan:
+    light.smart_mi_fan:
       friendly_name: 智米风扇
-    input_slider.smart_mi_fan_speed_slider:
-      friendly_name: 风速调节
+      icon: mdi:fan
+      custom_ui_state_card: custom-ui
+      state_card_mode: break-slider
+      stretch_slider: true
+      show_last_changed: false
+      hide_control: false
+      extra_badge:
+        entity_id: sensor.current_smart_mi_fan_battery
+      slider_theme:
+        min: 0
+        max: 255
+
     input_select.smart_mi_fan_shake_head_select:
       friendly_name: 摇头调节
     switch.smart_mi_fan_natural_wind_switch:
@@ -114,4 +118,6 @@ homeassistant:
     group.smartmifan:
       friendly_name: 智米风扇
       icon: mdi:fan
-
+    sensor.current_smart_mi_fan_battery:
+      friendly_name: 风扇电量
+      unit_of_measurement: '%'
