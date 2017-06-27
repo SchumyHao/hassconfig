@@ -1,0 +1,10 @@
+group:
+  bedroom_plugins:
+    entities:
+      - switch.wall_plug_158d0001592777
+
+homeassistant:
+  customize:
+    group.bedroom_plugins:
+      friendly_name: 主卧插座
+      icon: mdi:power-socket

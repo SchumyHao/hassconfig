@@ -1,0 +1,6 @@
+group:
+  balcony:
+    name: 阳台
+    view: yes
+    entities:
+      - group.balcony_plugins

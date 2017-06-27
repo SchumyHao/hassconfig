@@ -1,0 +1,11 @@
+group:
+  bedroom2:
+    name: 次卧
+    view: yes
+    entities:
+      - binary_sensor.motion_sensor_158d0000f4164c
+      - sensor.humidity_158d00010699fe
+      - sensor.temperature_158d00010699fe
+      - group.bedroom2_lights
+      - group.bedroom2_plugins
+      - group.bedroom2_switches

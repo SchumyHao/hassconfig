@@ -1,0 +1,10 @@
+group:
+  balcony_plugins:
+    entities:
+      - switch.wall_plug_158d000159c2e3
+
+homeassistant:
+  customize:
+    group.balcony_plugins:
+      friendly_name: 阳台插座
+      icon: mdi:power-socket

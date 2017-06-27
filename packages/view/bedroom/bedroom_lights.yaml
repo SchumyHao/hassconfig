@@ -1,0 +1,13 @@
+group:
+  bedroom_lights:
+    entities:
+      - light.wc
+      - light.bedroomlamp
+      - switch.wall_switch_158d000127a49d
+      - group.ceilinglamp
+
+homeassistant:
+  customize:
+    group.bedroom_lights:
+      friendly_name: 主卧灯
+      icon: mdi:ceiling-light

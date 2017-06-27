@@ -1,0 +1,9 @@
+group:
+  bedroom2_switches:
+    entities:
+      - binary_sensor.switch_158d00013ecf71
+
+homeassistant:
+  customize:
+    group.bedroom2_switches:
+      friendly_name: 次卧开关
