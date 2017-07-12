@@ -36,7 +36,7 @@ CONFIG_SCHEMA = vol.Schema({
     })
 }, extra=vol.ALLOW_EXTRA)
 
-XIAOMI_COMPONENTS = ['binary_sensor', 'sensor', 'switch', 'light']
+XIAOMI_COMPONENTS = ['binary_sensor', 'sensor', 'switch', 'light', 'cover']
 PY_XIAOMI_GATEWAY = None
 
 # Shortcut for the logger

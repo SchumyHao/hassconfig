@@ -32,7 +32,7 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
     add_devices(devices)
 
 
-class XiaomiGenericSwitch(XiaomiDevice, SwitchDevice):
+class XiaomiGenericCover(XiaomiDevice, CoverDevice):
     """Representation of a XiaomiPlug."""
 
     def __init__(self, device, name, data_key, xiaomi_hub):
@@ -71,17 +71,17 @@ class XiaomiGenericSwitch(XiaomiDevice, SwitchDevice):
     def close_cover(self, **kwargs):
         """Close the cover."""
         self.xiaomi_hub.write_to_hub(self._sid,
-            self._data_key[status], 'close')
+            self._data_key['status'], 'close')
 
     def open_cover(self, **kwargs):
         """Open the cover."""
         self.xiaomi_hub.write_to_hub(self._sid,
-            self._data_key[status], 'open')
+            self._data_key['status'], 'open')
 
     def set_cover_position(self, position, **kwargs):
         """Move the cover to a specific position."""
         self.xiaomi_hub.write_to_hub(self._sid,
-            self._data_key[pos], str(position))
+            self._data_key['pos'], str(position))
 
     def parse_data(self, data):
         """Parse data sent by gateway"""
