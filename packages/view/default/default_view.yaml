@@ -7,6 +7,7 @@ group:
       - binary_sensor.somebodymoving
       - group.default_lights
       - group.default_plugins
+      - group.default_covers
       - group.default_fans
       - group.default_illuminance
       - group.default_natgas

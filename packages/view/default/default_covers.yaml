@@ -1,0 +1,11 @@
+group:
+  default_covers:
+    entities:
+      - group.bedroom_covers
+      - group.bedroom2_covers
+      - group.livingroom_covers
+
+homeassistant:
+  customize:
+    group.default_covers:
+      friendly_name: 窗帘

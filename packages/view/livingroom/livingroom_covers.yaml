@@ -1,0 +1,9 @@
+group:
+  livingroom_covers:
+    entities:
+      - cover.curtain_158d00016beccf
+
+homeassistant:
+  customize:
+    group.livingroom_covers:
+      friendly_name: 客厅窗帘

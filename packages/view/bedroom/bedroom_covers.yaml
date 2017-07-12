@@ -1,0 +1,9 @@
+group:
+  bedroom_covers:
+    entities:
+      - cover.curtain_158d00016be84f
+
+homeassistant:
+  customize:
+    group.bedroom_covers:
+      friendly_name: 主卧窗帘

@@ -1,0 +1,9 @@
+homeassistant:
+  customize:
+    # curtain
+    cover.curtain_158d00016be84f:
+      friendly_name: 主卧窗帘
+    cover.curtain_158d00016beccf:
+      friendly_name: 客厅窗帘
+    cover.curtain_158d00016bed63:
+      friendly_name: 次卧窗帘
