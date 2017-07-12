@@ -72,7 +72,6 @@ class XiaomiGenericSwitch(XiaomiDevice, SwitchDevice):
                  ATTR_POWER_CONSUMED: self._power_consumed}
         attrs.update(super().device_state_attributes)
         return attrs
-
     def turn_on(self, **kwargs):
         """Turn the switch on."""
         self.xiaomi_hub.write_to_hub(self._sid, self._data_key, 'on')
@@ -83,7 +82,6 @@ class XiaomiGenericSwitch(XiaomiDevice, SwitchDevice):
 
     def parse_data(self, data):
         """Parse data sent by gateway"""
-
         if IN_USE in data:
             self._in_use = int(data[IN_USE])
             if not self._in_use:
