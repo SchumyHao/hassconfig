@@ -40,7 +40,6 @@ class XiaomiGenericCover(XiaomiDevice, CoverDevice):
         self._state = False
         self._data_key = data_key
         self._pos = 0
-        self._level = 0
         XiaomiDevice.__init__(self, device, name, xiaomi_hub)
 
     @property
@@ -56,18 +55,6 @@ class XiaomiGenericCover(XiaomiDevice, CoverDevice):
         else:
             return True
 
-    @property
-    def supported_features(self):
-        """Flag supported features."""
-        return SUPPORT_OPEN | SUPPORT_CLOSE | SUPPORT_SET_POSITION
-
-    @property
-    def device_state_attributes(self):
-        """Return the state attributes."""
-        attrs = {ATTR_CURTAIN_LEVEL: self._level}
-        attrs.update(super().device_state_attributes)
-        return attrs
-
     def close_cover(self, **kwargs):
         """Close the cover."""
         self.xiaomi_hub.write_to_hub(self._sid,
@@ -78,6 +65,11 @@ class XiaomiGenericCover(XiaomiDevice, CoverDevice):
         self.xiaomi_hub.write_to_hub(self._sid,
             self._data_key['status'], 'open')
 
+    def stop_cover(self, **kwargs):
+        """Stop the cover."""
+        self.xiaomi_hub.write_to_hub(self._sid,
+            self._data_key['status'], 'stop')
+
     def set_cover_position(self, position, **kwargs):
         """Move the cover to a specific position."""
         self.xiaomi_hub.write_to_hub(self._sid,
@@ -86,5 +78,6 @@ class XiaomiGenericCover(XiaomiDevice, CoverDevice):
     def parse_data(self, data):
         """Parse data sent by gateway"""
         if ATTR_CURTAIN_LEVEL in data:
-            self._level = int(data[ATTR_CURTAIN_LEVEL])
-            self._pos =  int(data[ATTR_CURTAIN_LEVEL])
+            self._pos = int(data[ATTR_CURTAIN_LEVEL])
+            return True
+        return False
