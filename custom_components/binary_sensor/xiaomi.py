@@ -33,15 +33,15 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
     for (ip_add, gateway) in gateways.items():
         for device in gateway.devices['binary_sensor']:
             model = device['model']
-            if model == 'motion':
+            if ((model == 'motion') or (model == 'sensor_motion.aq2')):
                 devices.append(XiaomiMotionSensor(device, hass, gateway))
-            elif model == 'magnet':
+            elif ((model == 'magnet') or (model == 'sensor_magnet.aq2')):
                 devices.append(XiaomiDoorSensor(device, gateway))
             elif model == 'smoke':
                 devices.append(XiaomiSmokeGasSensor(device, gateway, 'Smoke Sensor', 'smoke'))
             elif model == 'natgas':
                 devices.append(XiaomiSmokeGasSensor(device, gateway, 'Natural Gas Sensor', 'gas'))
-            elif model == 'switch':
+            elif ((model == 'switch') or (model == 'sensor_switch.aq2')):
                 devices.append(XiaomiButton(device, 'Switch', 'status', hass, gateway))
             elif model == '86sw1':
                 devices.append(XiaomiButton(device, 'Wall Switch', 'channel_0', hass, gateway))

@@ -337,9 +337,10 @@ class XiaomiGateway:
 
         _LOGGER.info('Found %s devices', len(sids))
 
-        sensors = ['sensor_ht', 'gateway']
-        binary_sensors = ['magnet', 'motion', 'switch', '86sw1', '86sw2', 'cube', 'smoke', 'natgas']
-        switches = ['plug', 'ctrl_neutral1', 'ctrl_neutral2', '86plug']
+        sensors = ['sensor_ht', 'gateway', 'sensor_motion.aq2', 'weather.v1']
+        binary_sensors = ['magnet', 'motion', 'switch', '86sw1', '86sw2', 'cube', 'smoke', 'natgas',
+            'sensor_magnet.aq2', 'sensor_switch.aq2', 'sensor_motion.aq2']
+        switches = ['plug', 'ctrl_neutral1', 'ctrl_neutral2', '86plug', 'ctrl_ln1', 'ctrl_ln2']
         lights = ['gateway']
         covers = ['curtain']
 
