@@ -1,7 +1,6 @@
-xiaomi:
+xiaomi_aqara:
   gateways:
-    - sid:
-      key: !secret xiaomi_key
+    - key: !secret xiaomi_key
 
 homeassistant:
   customize:
